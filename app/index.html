@@ -10,5 +10,15 @@
 	<main id="app"></main>
 	<script src="/scripts/jquery-custom.js"></script>
 	<script src="/components/app.js"></script>
+	<script>
+	if('serviceWorker' in navigator) {
+		navigator
+			.serviceWorker
+			.register('/offline-worker.js')
+			.then(function(reg) {
+				console.log('registered');
+			});
+	}
+	</script>
 </body>
 </html>
